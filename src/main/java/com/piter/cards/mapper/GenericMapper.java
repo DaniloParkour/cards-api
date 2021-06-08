@@ -1,7 +1,6 @@
 package com.piter.cards.mapper;
 
 import lombok.RequiredArgsConstructor;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,4 +28,3 @@ public class GenericMapper implements IGenericMapper {
         return list.stream().map(obj -> toObject(obj, clazz)).collect(Collectors.toList());
     }
 }
-
