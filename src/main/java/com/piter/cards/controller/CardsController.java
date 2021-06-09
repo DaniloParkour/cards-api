@@ -1,5 +1,7 @@
 package com.piter.cards.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.piter.cards.dto.card.CardDTO;
+import com.piter.cards.dto.card.SaveCardDTO;
 import com.piter.cards.mapper.requests.ResponseModel;
 import com.piter.cards.service.CardService;
 
@@ -29,7 +32,7 @@ public class CardsController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED) //Return 201 HTTP code (success created)
-	public ResponseModel<CardDTO> add(@RequestBody CardDTO card) {
+	public ResponseModel<CardDTO> add(@Valid @RequestBody SaveCardDTO card) {
 		return service.save(card);
 	}
 	
