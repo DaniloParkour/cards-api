@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "TB_CARD")
 public class Card {
-		
+			
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -24,7 +24,7 @@ public class Card {
 	private String name;
 	private String description;
 	private String urlImage;
-	private String type; //MINION, BOSS, EFFECT, FIELD
+	private int type; //MINION(1), BOSS(2), EFFECT(3), FIELD(4)
 	private int manaCost;
 	private int damage;
 	private int hp;
